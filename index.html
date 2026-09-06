@@ -9,10 +9,22 @@
   <body>
     <header>
       <h1>TechnoZone</h1>
-      <button class="menu-icon">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="cart">
+        <svg
+          width="30px"
+          height="30px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+            stroke="#FFFFFF"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </button>
     </header>
     <section class="frase">
@@ -29,7 +41,7 @@
           >
             <path
               d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-              stroke="#000000"
+              stroke="#FFFFFF"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -38,6 +50,116 @@
         </button>
       </div>
     </section>
-    <main></main>
+    <nav class="navegacion">
+      <ul>
+        <li><a href="">Hogar</a></li>
+        <li><a href="">Productos</a></li>
+        <li><a href="">Ofertas del día</a></li>
+        <li><a href="">Tendencias</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="products-populars">
+        <div class="title-products">
+          <h2>Populares</h2>
+        </div>
+        <div class="carts-products">
+          <div class="product-card">
+            <img src="images/laptop.jpg" alt="Laptop Gamer XYZ" />
+            <h3>Laptop Gamer XYZ</h3>
+            <p class="price">S/ 3,499</p>
+            <button class="add-cart">Agregar al carrito</button>
+          </div>
+          <div class="product-card">
+            <img src="images/mouse.jpg" alt="Mouse inalámbrico" />
+            <h3>Mouse Inalámbrico</h3>
+            <p class="price">S/ 89</p>
+            <button class="add-cart">Agregar al carrito</button>
+          </div>
+          <div class="product-card">
+            <img src="images/teclado.jpg" alt="Teclado mecánico" />
+            <h3>Teclado Mecánico</h3>
+            <p class="price">S/ 199</p>
+            <button class="add-cart">Agregar al carrito</button>
+          </div>
+        </div>
+      </section>
+      <section class="products-populars">
+        <div class="title-products">
+          <h2>Novedades</h2>
+        </div>
+        <div class="carts-products">
+          <div class="product-card">
+            <img src="images/laptop.jpg" alt="Laptop Gamer XYZ" />
+            <h3>Laptop Gamer XYZ</h3>
+            <p class="price">S/ 3,499</p>
+            <button class="add-cart">Agregar al carrito</button>
+          </div>
+          <div class="product-card">
+            <img src="images/mouse.jpg" alt="Mouse inalámbrico" />
+            <h3>Mouse Inalámbrico</h3>
+            <p class="price">S/ 89</p>
+            <button class="add-cart">Agregar al carrito</button>
+          </div>
+          <div class="product-card">
+            <img src="images/teclado.jpg" alt="Teclado mecánico" />
+            <h3>Teclado Mecánico</h3>
+            <p class="price">S/ 199</p>
+            <button class="add-cart">Agregar al carrito</button>
+          </div>
+        </div>
+      </section>
+      <section class="products-populars">
+        <div class="title-products">
+          <h2>Últimos productos</h2>
+        </div>
+        <div class="carts-products">
+          <div class="product-card">
+            <img src="images/laptop-gamer_01.jpg" alt="Laptop Gamer XYZ" />
+            <h3>Laptop Gamer XYZ</h3>
+            <p class="price">S/ 3,499</p>
+            <button class="add-cart">Agregar al carrito</button>
+          </div>
+          <div class="product-card">
+            <img src="images/laptop-gamer_01.jpg" alt="Mouse inalámbrico" />
+            <h3>Mouse Inalámbrico</h3>
+            <p class="price">S/ 89</p>
+            <button class="add-cart">Agregar al carrito</button>
+          </div>
+          <div class="product-card">
+            <img src="images/laptop-gamer_01.jpg" alt="Teclado mecánico" />
+            <h3>Teclado Mecánico</h3>
+            <p class="price">S/ 199</p>
+            <button class="add-cart">Agregar al carrito</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>TechnoZone</h3>
+          <p>Tu zona de confianza en productos de calidad.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="">Sobre nosotros</a></li>
+            <li><a href="">Contacto</a></li>
+            <li><a href="">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <ul>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">
+        &copy; 2026 TechnoZone. Todos los derechos reservados.
+      </p>
+    </footer>
   </body>
 </html>
