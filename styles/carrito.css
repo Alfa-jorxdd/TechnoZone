@@ -1,0 +1,199 @@
+/* carrito.css
+   Panel lateral del carrito + su overlay (fondo oscuro detrás). */
+
+/* Numerito rojo sobre el ícono del carrito, en el header */
+.cart {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background-color: #e63946;
+  color: #ffffff;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* Fondo oscuro detrás del panel, cubre toda la pantalla */
+.carrito-overlay {
+  position: fixed;
+  inset: 0; /* atajo equivalente a top:0; right:0; bottom:0; left:0; */
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none; /* mientras está oculto, los clics lo atraviesan */
+  transition: opacity 0.25s ease;
+  z-index: 90;
+}
+
+.carrito-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* El panel en sí: fijo a la derecha, oculto fuera de la pantalla por defecto */
+.carrito-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(360px, 100%);
+  background-color: #ffffff;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%); /* lo empuja fuera de la pantalla, a la derecha */
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+.carrito-panel.abierto {
+  transform: translateX(0); /* lo trae de vuelta a su posición normal */
+}
+
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  background-color: #1a277e;
+  color: #ffffff;
+}
+
+.carrito-header h2 {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.carrito-cerrar {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.carrito-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.carrito-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 15px;
+}
+
+.carrito-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.carrito-item-info {
+  flex: 1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.carrito-item-info h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.carrito-item-precio {
+  color: #1a277e;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.carrito-item-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-cantidad {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #1a277e;
+  background-color: #ffffff;
+  color: #1a277e;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.btn-cantidad:hover {
+  background-color: #1a277e;
+  color: #ffffff;
+}
+
+.carrito-item-quitar {
+  background: none;
+  border: none;
+  color: #999999;
+  font-size: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.carrito-item-quitar:hover {
+  color: #e63946;
+}
+
+.carrito-vacio {
+  text-align: center;
+  color: #777777;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 40px 20px;
+}
+
+.carrito-footer {
+  padding: 18px 20px;
+  border-top: 1px solid #eeeeee;
+}
+
+.carrito-total {
+  display: flex;
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #1a277e;
+}
+
+.carrito-checkout {
+  width: 100%;
+  background-color: #1a277e;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.carrito-checkout:hover {
+  background-color: #14206c;
+}

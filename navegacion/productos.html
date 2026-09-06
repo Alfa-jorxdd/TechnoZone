@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/carrito.css" />
+    <link rel="stylesheet" href="../styles/productos.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>Productos | TechnoZone</title>
+  </head>
+  <body>
+    <header>
+      <h1>TechnoZone</h1>
+      <button class="cart" id="btn-carrito">
+        <svg
+          width="30px"
+          height="30px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+            stroke="#FFFFFF"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span class="cart-badge" id="carrito-contador" hidden>0</span>
+      </button>
+    </header>
+
+    <div class="carrito-overlay" id="carrito-overlay"></div>
+    <aside class="carrito-panel" id="carrito-panel">
+      <div class="carrito-header">
+        <h2>Tu carrito</h2>
+        <button class="carrito-cerrar" id="btn-cerrar-carrito">&times;</button>
+      </div>
+      <div class="carrito-items" id="carrito-items">
+        <!-- -->
+      </div>
+      <p class="carrito-vacio" id="carrito-vacio" hidden>
+        Tu carrito está vacío
+      </p>
+      <div class="carrito-footer">
+        <div class="carrito-total">
+          <span>Total</span>
+          <span id="carrito-total">S/ 0</span>
+        </div>
+        <button class="carrito-checkout" id="btn-checkout">
+          Proceder al pago
+        </button>
+      </div>
+    </aside>
+
+    <nav class="navegacion">
+      <ul>
+        <li><a href="../home.html">Hogar</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="">Sobre nosotros</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="filtros-productos">
+        <div class="filtros-contenedor">
+          <input
+            type="text"
+            id="buscador"
+            placeholder="Buscar producto..."
+            aria-label="Buscar producto"
+          />
+
+          <select id="filtro-categoria" aria-label="Filtrar por categoría">
+            <option value="">Todas las categorías</option>
+            <option value="laptops">Laptops</option>
+            <option value="perifericos">Periféricos</option>
+            <option value="componentes">Componentes</option>
+            <option value="audio">Audio</option>
+          </select>
+
+          <div class="filtro-precio">
+            <input
+              type="number"
+              id="precio-min"
+              placeholder="Precio mín"
+              min="0"
+            />
+            <input
+              type="number"
+              id="precio-max"
+              placeholder="Precio máx"
+              min="0"
+            />
+          </div>
+
+          <select id="orden" aria-label="Ordenar por">
+            <option value="">Ordenar por</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="nombre-asc">Nombre: A-Z</option>
+          </select>
+        </div>
+      </section>
+
+      <p id="contador-resultados" class="contador-resultados"></p>
+
+      <section class="products-populars">
+        <div class="title-products">
+          <h2>Catálogo de productos</h2>
+        </div>
+        <div class="carts-products" id="grid-productos">
+          <!-- -->
+        </div>
+        <p id="sin-resultados" class="sin-resultados" hidden>
+          No se encontraron productos con esos filtros.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>TechnoZone</h3>
+          <p>Tu zona de confianza en productos de calidad.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="">Sobre nosotros</a></li>
+            <li><a href="">Contacto</a></li>
+            <li><a href="">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <ul>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">
+        &copy; 2026 TechnoZone. Todos los derechos reservados.
+      </p>
+    </footer>
+
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/carrito.js"></script>
+    <script src="../scripts/productos.js"></script>
+  </body>
+</html>
