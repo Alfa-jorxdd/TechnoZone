@@ -81,4 +81,11 @@ inputPrecioMax.addEventListener("input", aplicarFiltros);
 selectCategoria.addEventListener("change", aplicarFiltros);
 selectOrden.addEventListener("change", aplicarFiltros);
 
+const param = new URLSearchParams(window.location.search);
+const textoRecibido = param.get("q");
+
+if(textoRecibido){
+  inputBusqueda.value = textoRecibido;
+}
+
 aplicarFiltros();

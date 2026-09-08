@@ -34,27 +34,29 @@
     <aside class="carrito-panel" id="carrito-panel">
       <div class="carrito-header">
         <h2>Tu carrito</h2>
-        <button class="carrito-cerrar" id="btn-cerrar-carrito">
-          &times;
-        </button>
+        <button class="carrito-cerrar" id="btn-cerrar-carrito">&times;</button>
       </div>
       <div class="carrito-items" id="carrito-items">
         <!-- -->
       </div>
-      <p class="carrito-vacio" id="carrito-vacio" hidden>Tu carrito está vacío</p>
+      <p class="carrito-vacio" id="carrito-vacio" hidden>
+        Tu carrito está vacío
+      </p>
       <div class="carrito-footer">
         <div class="carrito-total">
           <span>Total</span>
           <span id="carrito-total">S/ 0</span>
         </div>
-        <button class="carrito-checkout" id="btn-checkout">Proceder al pago</button>
+        <button class="carrito-checkout" id="btn-checkout">
+          Proceder al pago
+        </button>
       </div>
     </aside>
     <section class="frase">
       <p>Tu zona de confianza en productos de calidad</p>
       <div class="input-contenedor">
-        <input type="text" placeholder="Ingrese un producto" />
-        <button>
+        <input type="text" placeholder="Ingrese un producto" id="inputBuscar" />
+        <button id="botonBuscar">
           <svg
             width="20px"
             height="20px"
@@ -85,129 +87,24 @@
         <div class="title-products">
           <h2>Populares</h2>
         </div>
-        <div class="carts-products">
-          <div class="product-card">
-            <img src="images/laptop-gamer_01.jpg" alt="Laptop Gamer XYZ" />
-            <h3>Laptop Gamer XYZ</h3>
-            <p class="price">S/ 3,499</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/mouse-gamer_01.jpg" alt="Mouse inalámbrico" />
-            <h3>Mouse Inalámbrico</h3>
-            <p class="price">S/ 89</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/teclado-gamer_01.jpg" alt="Teclado mecánico" />
-            <h3>Teclado Mecánico</h3>
-            <p class="price">S/ 199</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/gabinete-gamer_01.jpg" alt="Laptop Gamer XYZ" />
-            <h3>Gabinete Con Ventilación</h3>
-            <p class="price">S/ 400</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/auriculares_01.jpg" alt="Mouse inalámbrico" />
-            <h3>Auriculares inalámbricos</h3>
-            <p class="price">S/ 56</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/microfono_01.jpg" alt="Teclado mecánico" />
-            <h3>Microfono Profecional</h3>
-            <p class="price">S/ 230</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
+        <div class="carts-products" id="grid-populares">
+         <!-- --> 
         </div>
       </section>
-      <section class="products-populars">
+      <section class="products-news">
         <div class="title-products">
           <h2>Novedades</h2>
         </div>
-        <div class="carts-products">
-          <div class="product-card">
-            <img src="images/laptop.jpg" alt="Laptop Gamer XYZ" />
-            <h3>Laptop Gamer XYZ</h3>
-            <p class="price">S/ 3,499</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/mouse.jpg" alt="Mouse inalámbrico" />
-            <h3>Mouse Inalámbrico</h3>
-            <p class="price">S/ 89</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/teclado.jpg" alt="Teclado mecánico" />
-            <h3>Teclado Mecánico</h3>
-            <p class="price">S/ 199</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/laptop.jpg" alt="Laptop Gamer XYZ" />
-            <h3>Laptop Gamer XYZ</h3>
-            <p class="price">S/ 3,499</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/mouse.jpg" alt="Mouse inalámbrico" />
-            <h3>Mouse Inalámbrico</h3>
-            <p class="price">S/ 89</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/teclado.jpg" alt="Teclado mecánico" />
-            <h3>Teclado Mecánico</h3>
-            <p class="price">S/ 199</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
+        <div class="carts-products" id="grid-novedades">
+          <!-- -->
         </div>
       </section>
-      <section class="products-populars">
+      <section class="products-latest">
         <div class="title-products">
           <h2>Últimos productos</h2>
         </div>
-        <div class="carts-products">
-          <div class="product-card">
-            <img src="images/laptop-gamer_01.jpg" alt="Laptop Gamer XYZ" />
-            <h3>Laptop Gamer XYZ</h3>
-            <p class="price">S/ 3,499</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/laptop-gamer_01.jpg" alt="Mouse inalámbrico" />
-            <h3>Mouse Inalámbrico</h3>
-            <p class="price">S/ 89</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/laptop-gamer_01.jpg" alt="Teclado mecánico" />
-            <h3>Teclado Mecánico</h3>
-            <p class="price">S/ 199</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/laptop.jpg" alt="Laptop Gamer XYZ" />
-            <h3>Laptop Gamer XYZ</h3>
-            <p class="price">S/ 3,499</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/mouse.jpg" alt="Mouse inalámbrico" />
-            <h3>Mouse Inalámbrico</h3>
-            <p class="price">S/ 89</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
-          <div class="product-card">
-            <img src="images/teclado.jpg" alt="Teclado mecánico" />
-            <h3>Teclado Mecánico</h3>
-            <p class="price">S/ 199</p>
-            <button class="add-cart">Agregar al carrito</button>
-          </div>
+        <div class="carts-products" id="grid-ultimos">
+          <!-- -->
         </div>
       </section>
     </main>
@@ -239,6 +136,8 @@
     </footer>
 
     <script src="scripts/data.js"></script>
+    <script src="scripts/renderizar-productos-home.js"></script>
     <script src="scripts/carrito.js"></script>
+    <script src="scripts/redireccion-busqueda.js"></script>
   </body>
 </html>
