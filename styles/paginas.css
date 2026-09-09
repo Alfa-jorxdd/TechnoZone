@@ -1,0 +1,87 @@
+/* paginas.css
+   Estilos basicos para las paginas de confirmacion y sobre nosotros.
+   Se usan las mismas propiedades simples que el resto del sitio:
+   colores, margenes, padding, border-radius. Nada de posicionamiento
+   avanzado. */
+
+.contenido-pagina {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.tarjeta-pagina {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+  padding: 40px 30px;
+  text-align: center;
+}
+
+/* ---------- Confirmacion de pedido ---------- */
+
+.icono-exito {
+  font-size: 50px;
+  color: #1a277e;
+  margin-bottom: 10px;
+}
+
+.tarjeta-pagina h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1a277e;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.tarjeta-pagina p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.numero-pedido {
+  display: inline-block;
+  background-color: #f0f2fb;
+  color: #1a277e;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin: 10px 0 20px;
+}
+
+.btn-volver-home {
+  display: inline-block;
+  background-color: #1a277e;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.btn-volver-home:hover {
+  background-color: #14206c;
+}
+
+/* ---------- Sobre nosotros ---------- */
+
+.tarjeta-pagina.texto-izquierda {
+  text-align: left;
+}
+
+.texto-izquierda h2 {
+  text-align: center;
+}
+
+.contenedor-video {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.contenedor-video video {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border-radius: 10px;
+}

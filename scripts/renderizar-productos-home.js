@@ -12,7 +12,7 @@ function renderizarProductos(lista, contenedor){
             <img src="${producto.imagen}" alt="${producto.nombre}"/>
             <h3>${producto.nombre}</h3>
             <p class="price">S/ ${producto.precio.toLocaleString("es-PE")}</p>
-            <buttom class="add-cart" data-id="${producto.id}">Agregar al carrito</buttom>
+            <button class="add-cart" data-id="${producto.id}">Agregar al carrito</button>
         `;
         contenedor.appendChild(tarjeta);
     });

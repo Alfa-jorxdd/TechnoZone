@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/paginas.css" />
+    <title>Pedido confirmado | TechnoZone</title>
+  </head>
+  <body>
+    <header>
+      <h1>TechnoZone</h1>
+    </header>
+
+    <section class="frase">
+      <p>Tu zona de confianza en productos de calidad</p>
+    </section>
+
+    <main>
+      <div class="contenido-pagina">
+        <div class="tarjeta-pagina">
+          <div class="icono-exito">&#10004;</div>
+
+          <h2>Tu pedido se ha realizado con exito</h2>
+          <p>Gracias por comprar en TechnoZone. Hemos recibido tu pedido y ya lo estamos preparando.</p>
+
+          <p class="numero-pedido" id="numero-pedido">Pedido #000000</p>
+
+          <p>Te enviaremos un correo con los detalles y el estado del envio.</p>
+
+          <a href="../home.html" class="btn-volver-home">Volver a la pagina principal</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>TechnoZone</h3>
+          <p>Tu zona de confianza en productos de calidad.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="">Contacto</a></li>
+            <li><a href="">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Siguenos</h4>
+          <ul>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 TechnoZone. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      // Esta pagina se muestra DESPUES de que el pago fue procesado
+      //
+      // Aca solo hacemos 2 cosas simples:
+      //   1. Generar un numero de pedido de referencia para mostrarlo en pantalla.
+      //   2. Vaciar el carrito, porque si el usuario ya pago, no deberia seguir
+      //      viendo esos productos en su carrito la proxima vez que entre al sitio.
+      //
+      // Usamos la MISMA clave "technozone_carrito" que usa carrito.js,
+      // asi que basta con borrarla de localStorage.
+
+      var claveCarrito = "technozone_carrito";
+      localStorage.removeItem(claveCarrito);
+
+      // Numero de pedido simple, solo de referencia visual.
+      var numeroPedido = Math.floor(Math.random() * 900000) + 100000;
+      document.getElementById("numero-pedido").innerHTML = "Pedido #" + numeroPedido;
+    </script>
+  </body>
+</html>
