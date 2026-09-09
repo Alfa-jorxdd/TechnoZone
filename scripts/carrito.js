@@ -1,4 +1,13 @@
+// carrito.js
+// Maneja todo lo relacionado al carrito:
+// guardar, leer, mostrar y modificar los productos.
+
 const CLAVE_CARRITO = "technozone_carrito";
+
+
+// ------------------------------------------------------------------
+// 1. LEER Y GUARDAR EL CARRITO
+// ------------------------------------------------------------------
 
 function obtenerCarrito() {
 
@@ -15,6 +24,11 @@ function guardarCarrito(carrito) {
       JSON.stringify(carrito)
   );
 }
+
+
+// ------------------------------------------------------------------
+// 2. OPERACIONES DEL CARRITO
+// ------------------------------------------------------------------
 
 function agregarAlCarrito(id) {
 
@@ -43,7 +57,7 @@ function agregarAlCarrito(id) {
 }
 
 
-function cambiarCantidad(id, numero) {
+function cambiarCantidad(id, delta) {
 
   const carrito = obtenerCarrito();
 
@@ -55,7 +69,7 @@ function cambiarCantidad(id, numero) {
     return;
   }
 
-  item.cantidad += numero;
+  item.cantidad += delta;
 
   if (item.cantidad <= 0) {
 
@@ -104,6 +118,11 @@ function calcularTotal(carrito) {
   }, 0);
 }
 
+
+// ------------------------------------------------------------------
+// 3. MOSTRAR CARRITO
+// ------------------------------------------------------------------
+
 function renderizarCarrito() {
 
   const carrito = obtenerCarrito();
@@ -130,6 +149,7 @@ function renderizarCarrito() {
   badge.textContent = totalUnidades;
 
   badge.hidden = totalUnidades === 0;
+
 
   contenedor.innerHTML = "";
 
@@ -227,6 +247,11 @@ function renderizarCarrito() {
       "S/ " + total.toLocaleString("es-PE");
 }
 
+
+// ------------------------------------------------------------------
+// 4. ABRIR Y CERRAR CARRITO
+// ------------------------------------------------------------------
+
 function abrirCarrito() {
 
   document
@@ -249,6 +274,11 @@ function cerrarCarrito() {
       .getElementById("carrito-overlay")
       .classList.remove("visible");
 }
+
+
+// ------------------------------------------------------------------
+// 5. EVENTOS
+// ------------------------------------------------------------------
 
 document
     .getElementById("btn-carrito")
@@ -273,6 +303,8 @@ document
         cerrarCarrito
     );
 
+
+// Botones agregar, sumar, restar y quitar.
 
 document.body.addEventListener("click", function (evento) {
 
@@ -329,6 +361,10 @@ document.body.addEventListener("click", function (evento) {
 });
 
 
+// ------------------------------------------------------------------
+// 6. PROCEDER AL PAGO
+// ------------------------------------------------------------------
+
 document
     .getElementById("btn-checkout")
     .addEventListener("click", function () {
@@ -349,5 +385,10 @@ document
       }
 
     });
+
+
+// ------------------------------------------------------------------
+// 7. MOSTRAR CARRITO AL CARGAR LA PÁGINA
+// ------------------------------------------------------------------
 
 renderizarCarrito();
