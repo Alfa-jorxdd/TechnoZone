@@ -1,11 +1,6 @@
-/* paginas.css
-   Estilos basicos para las paginas de confirmacion y sobre nosotros.
-   Se usan las mismas propiedades simples que el resto del sitio:
-   colores, margenes, padding, border-radius. Nada de posicionamiento
-   avanzado. */
 
 .contenido-pagina {
-  max-width: 700px;
+  max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
 }
@@ -64,24 +59,175 @@
   background-color: #14206c;
 }
 
-/* ---------- Sobre nosotros ---------- */
+/* ==========================================================
+   SOBRE NOSOTROS
+   ========================================================== */
 
-.tarjeta-pagina.texto-izquierda {
+.contenido-pagina section {
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+  padding: 35px 30px;
+  margin-bottom: 22px;
+}
+
+.contenido-pagina section h2 {
+  font-family: Audiowide;
+  color: #1a277e;
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.contenido-pagina section p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* --- Hero: texto + video lado a lado --- */
+
+.hero-nosotros {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.intro-texto h2 {
   text-align: left;
-}
-
-.texto-izquierda h2 {
-  text-align: center;
-}
-
-.contenedor-video {
-  text-align: center;
-  margin: 20px 0;
 }
 
 .contenedor-video video {
   width: 100%;
-  max-width: 640px;
+  max-width: 100%;
   height: auto;
   border-radius: 10px;
+  display: block;
+}
+
+/* --- Historia: linea de tiempo simple --- */
+
+.timeline {
+  display: flex;
+  gap: 25px;
+}
+
+.timeline-item {
+  flex: 1;
+  position: relative;
+  padding-top: 22px;
+  border-top: 3px solid #f2a154;
+}
+
+.timeline-punto {
+  position: absolute;
+  top: -9px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #f2a154;
+}
+
+.timeline-item h3 {
+  font-family: Audiowide;
+  color: #14206c;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.timeline-item p {
+  font-size: 14px;
+}
+
+/* --- Mision y vision, lado a lado con acento de color --- */
+
+.mision-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.bloque-mision,
+.bloque-vision {
+  padding-left: 18px;
+}
+
+.bloque-mision {
+  border-left: 4px solid #f2a154;
+}
+
+.bloque-vision {
+  border-left: 4px solid #1a277e;
+}
+
+.bloque-mision h2,
+.bloque-vision h2 {
+  text-align: left;
+}
+
+/* --- Valores: iniciales en circulo en vez de vinetas --- */
+
+.valores-fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.valor-item {
+  flex: 1 1 180px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.valor-letra {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1a277e;
+  color: #ffffff;
+  font-family: Audiowide;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.valor-item p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* --- Audio --- */
+
+.contenedor-audio {
+  margin-top: 10px;
+}
+
+.contenedor-audio audio {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* ---------- Responsive: celulares y tablets chicas ---------- */
+@media (max-width: 700px) {
+  .hero-nosotros,
+  .mision-vision {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tarjeta-pagina,
+  .contenido-pagina section {
+    padding: 25px 18px;
+  }
 }
