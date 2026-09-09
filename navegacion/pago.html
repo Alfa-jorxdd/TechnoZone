@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/carrito.css" />
+    <link rel="stylesheet" href="../styles/pago.css" />
+
+    <title>Proceder al pago | TechnoZone</title>
+</head>
+
+<body>
+
+<!-- ENCABEZADO -->
+<header>
+    <h1>TechnoZone</h1>
+
+    <button class="cart" id="btn-carrito">
+        <svg
+                width="30px"
+                height="30px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                    d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+                    stroke="#FFFFFF"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+            />
+        </svg>
+
+        <span class="cart-badge" id="carrito-contador" hidden>
+          0
+        </span>
+    </button>
+</header>
+
+
+<!-- PANEL DEL CARRITO -->
+<div class="carrito-overlay" id="carrito-overlay"></div>
+
+<aside class="carrito-panel" id="carrito-panel">
+
+    <div class="carrito-header">
+        <h2>Tu carrito</h2>
+
+        <button
+                class="carrito-cerrar"
+                id="btn-cerrar-carrito"
+        >
+            &times;
+        </button>
+    </div>
+
+    <div
+            class="carrito-items"
+            id="carrito-items"
+    >
+        <!-- -->
+    </div>
+
+    <p
+            class="carrito-vacio"
+            id="carrito-vacio"
+            hidden
+    >
+        Tu carrito está vacío
+    </p>
+
+    <div class="carrito-footer">
+
+        <div class="carrito-total">
+            <span>Total</span>
+            <span id="carrito-total">S/ 0</span>
+        </div>
+
+        <button
+                class="carrito-checkout"
+                id="btn-checkout"
+        >
+            Proceder al pago
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- FRASE Y BUSCADOR -->
+<section class="frase">
+
+    <p>
+        Tu zona de confianza en productos de calidad
+    </p>
+
+    <div class="input-contenedor">
+
+        <input
+                type="text"
+                placeholder="Ingrese un producto"
+                id="inputBuscar"
+        />
+
+        <button id="botonBuscar">
+
+            <svg
+                    width="20px"
+                    height="20px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                        d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z"
+                        stroke="#FFFFFF"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                />
+            </svg>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- NAVEGACIÓN -->
+<nav class="navegacion">
+    <ul>
+        <li>
+            <a href="../home.html">
+                Hogar
+            </a>
+        </li>
+
+        <li>
+            <a href="productos.html">
+                Productos
+            </a>
+        </li>
+
+        <li>
+            <a href="sobre-nosotros.html">
+                Sobre nosotros
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="pago-principal">
+
+    <form id="form-pago">
+
+
+        <!-- RESUMEN DE COMPRA -->
+        <section class="seccion-pago">
+
+            <div class="title-products">
+                <h2>Resumen de compra</h2>
+            </div>
+
+            <div class="caja-pago">
+
+                <div class="tabla-contenedor">
+
+                    <table class="tabla-resumen">
+
+                        <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th>Acción</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="tabla-productos">
+                        <!-- Productos generados con JavaScript -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p
+                        id="resumen-vacio"
+                        class="resumen-vacio"
+                        hidden
+                >
+                    Tu carrito está vacío.
+                </p>
+
+
+                <!-- DESCUENTO -->
+                <div class="descuento-contenedor">
+
+                    <label for="codigo-descuento">
+                        Código de descuento
+                    </label>
+
+                    <div class="descuento-fila">
+
+                        <input
+                                type="text"
+                                id="codigo-descuento"
+                                placeholder="Ingrese su código"
+                        />
+
+                        <button
+                                type="button"
+                                id="btn-descuento"
+                        >
+                            Aplicar
+                        </button>
+
+                    </div>
+
+                    <p
+                            id="mensaje-descuento"
+                            class="mensaje-descuento"
+                    ></p>
+
+                </div>
+
+
+                <!-- TOTALES -->
+                <div class="totales-compra">
+
+                    <div>
+                        <span>Subtotal</span>
+                        <span id="subtotal-compra">
+                  S/ 0
+                </span>
+                    </div>
+
+                    <div>
+                        <span>Descuento</span>
+                        <span id="descuento-compra">
+                  S/ 0
+                </span>
+                    </div>
+
+                    <div>
+                        <span>Envío</span>
+                        <span id="envio-compra">
+                  S/ 0
+                </span>
+                    </div>
+
+                    <div class="total-final">
+                        <span>Total</span>
+                        <span id="total-compra">
+                  S/ 0
+                </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- DATOS DEL COMPRADOR -->
+        <section class="seccion-pago">
+
+            <div class="title-products">
+                <h2>Datos del comprador</h2>
+            </div>
+
+            <div class="caja-pago">
+
+                <div class="formulario-grid">
+
+                    <div class="campo campo-completo">
+
+                        <label for="nombre-completo">
+                            Nombre completo
+                        </label>
+
+                        <input
+                                type="text"
+                                id="nombre-completo"
+                                placeholder="Ingrese su nombre completo"
+                        />
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="tipo-documento">
+                            Tipo de documento
+                        </label>
+
+                        <select id="tipo-documento">
+
+                            <option value="">
+                                Seleccione
+                            </option>
+
+                            <option value="dni">
+                                DNI
+                            </option>
+
+                            <option value="ce">
+                                Carné de extranjería
+                            </option>
+
+                            <option value="pasaporte">
+                                Pasaporte
+                            </option>
+
+                            <option value="ruc">
+                                RUC
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="numero-documento">
+                            Número de documento
+                        </label>
+
+                        <input
+                                type="text"
+                                id="numero-documento"
+                                placeholder="Ingrese su documento"
+                        />
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="correo">
+                            Correo electrónico
+                        </label>
+
+                        <input
+                                type="email"
+                                id="correo"
+                                placeholder="correo@ejemplo.com"
+                        />
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="telefono">
+                            Teléfono
+                        </label>
+
+                        <input
+                                type="tel"
+                                id="telefono"
+                                placeholder="Ingrese su teléfono"
+                                maxlength="9"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TIPO DE ENTREGA -->
+        <section class="seccion-pago">
+
+            <div class="title-products">
+                <h2>Entrega</h2>
+            </div>
+
+            <div class="caja-pago">
+
+                <div class="campo">
+
+                    <label for="tipo-entrega">
+                        Tipo de entrega
+                    </label>
+
+                    <select id="tipo-entrega">
+
+                        <option value="">
+                            Seleccione un tipo de entrega
+                        </option>
+
+                        <option value="recojo">
+                            Recojo en tienda
+                        </option>
+
+                        <option value="domicilio">
+                            Envío a domicilio
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- RECOJO -->
+                <div
+                        id="datos-recojo"
+                        class="opcion-adicional"
+                        hidden
+                >
+
+                    <h3>Recojo en tienda</h3>
+
+                    <p>
+                        Podrás recoger tu pedido directamente
+                        en nuestra tienda TechnoZone.
+                    </p>
+
+                    <p>
+                        El recojo no tiene costo adicional.
+                    </p>
+
+                </div>
+
+
+                <!-- DOMICILIO -->
+                <div
+                        id="datos-domicilio"
+                        class="opcion-adicional"
+                        hidden
+                >
+
+                    <div class="formulario-grid">
+
+                        <div class="campo campo-completo">
+
+                            <label for="direccion">
+                                Dirección
+                            </label>
+
+                            <input
+                                    type="text"
+                                    id="direccion"
+                                    placeholder="Ingrese su dirección"
+                            />
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="distrito">
+                                Distrito
+                            </label>
+
+                            <select id="distrito">
+
+                                <option value="">
+                                    Seleccione un distrito
+                                </option>
+
+                                <option value="chiclayo">
+                                    Chiclayo
+                                </option>
+
+                                <option value="jlo">
+                                    José Leonardo Ortiz
+                                </option>
+
+                                <option value="la-victoria">
+                                    La Victoria
+                                </option>
+
+                                <option value="pimentel">
+                                    Pimentel
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="referencia">
+                                Referencia
+                            </label>
+
+                            <input
+                                    type="text"
+                                    id="referencia"
+                                    placeholder="Referencia del domicilio"
+                            />
+
+                        </div>
+
+                    </div>
+
+                    <p class="aviso-entrega">
+                        El envío a domicilio tiene un costo de S/ 15.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- MÉTODO DE PAGO -->
+        <section class="seccion-pago">
+
+            <div class="title-products">
+                <h2>Forma de pago</h2>
+            </div>
+
+            <div class="caja-pago">
+
+                <div class="campo">
+
+                    <label for="metodo-pago">
+                        Método de pago
+                    </label>
+
+                    <select id="metodo-pago">
+
+                        <option value="">
+                            Seleccione un método de pago
+                        </option>
+
+                        <option value="tarjeta">
+                            Tarjeta de crédito o débito
+                        </option>
+
+                        <option value="yape">
+                            Yape
+                        </option>
+
+                        <option value="plin">
+                            Plin
+                        </option>
+
+                        <option value="transferencia">
+                            Transferencia bancaria
+                        </option>
+
+                        <option value="contra-entrega">
+                            Pago contra entrega
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TARJETA -->
+                <div
+                        id="pago-tarjeta"
+                        class="opcion-adicional"
+                        hidden
+                >
+
+                    <h3>Datos de la tarjeta</h3>
+
+                    <div class="formulario-grid">
+
+                        <div class="campo campo-completo">
+
+                            <label for="numero-tarjeta">
+                                Número de tarjeta
+                            </label>
+
+                            <input
+                                    type="text"
+                                    id="numero-tarjeta"
+                                    maxlength="16"
+                                    placeholder="0000 0000 0000 0000"
+                            />
+
+                        </div>
+
+
+                        <div class="campo campo-completo">
+
+                            <label for="titular-tarjeta">
+                                Nombre del titular
+                            </label>
+
+                            <input
+                                    type="text"
+                                    id="titular-tarjeta"
+                                    placeholder="Nombre del titular"
+                            />
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="fecha-vencimiento">
+                                Fecha de vencimiento
+                            </label>
+
+                            <input
+                                    type="month"
+                                    id="fecha-vencimiento"
+                            />
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="cvv">
+                                CVV
+                            </label>
+
+                            <input
+                                    type="password"
+                                    id="cvv"
+                                    maxlength="3"
+                                    placeholder="000"
+                            />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- YAPE -->
+                <div
+                        id="pago-yape"
+                        class="opcion-adicional pago-digital"
+                        hidden
+                >
+
+                    <h3>Pago con Yape</h3>
+
+                    <p>
+                        Realiza el pago mediante Yape y
+                        continúa con la confirmación de tu compra.
+                    </p>
+
+                </div>
+
+
+                <!-- PLIN -->
+                <div
+                        id="pago-plin"
+                        class="opcion-adicional pago-digital"
+                        hidden
+                >
+
+                    <h3>Pago con Plin</h3>
+
+                    <p>
+                        Realiza el pago mediante Plin y
+                        continúa con la confirmación de tu compra.
+                    </p>
+
+                </div>
+
+
+                <!-- TRANSFERENCIA -->
+                <div
+                        id="pago-transferencia"
+                        class="opcion-adicional"
+                        hidden
+                >
+
+                    <h3>Transferencia bancaria</h3>
+
+                    <div class="campo">
+
+                        <label for="banco">
+                            Banco
+                        </label>
+
+                        <select id="banco">
+
+                            <option value="">
+                                Seleccione un banco
+                            </option>
+
+                            <option value="bcp">
+                                BCP
+                            </option>
+
+                            <option value="interbank">
+                                Interbank
+                            </option>
+
+                            <option value="bbva">
+                                BBVA
+                            </option>
+
+                            <option value="scotiabank">
+                                Scotiabank
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <p class="aviso-pago">
+                        Los datos de la cuenta serán mostrados
+                        para completar la transferencia.
+                    </p>
+
+                </div>
+
+
+                <!-- CONTRA ENTREGA -->
+                <div
+                        id="pago-contra-entrega"
+                        class="opcion-adicional"
+                        hidden
+                >
+
+                    <h3>Pago contra entrega</h3>
+
+                    <p>
+                        Podrás realizar el pago cuando
+                        recibas tu pedido.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FINAL -->
+        <section class="seccion-pago">
+
+            <div class="caja-pago final-compra">
+
+                <label class="terminos">
+
+                    <input
+                            type="checkbox"
+                            id="aceptar-terminos"
+                    />
+
+                    <span>
+                Acepto los términos y condiciones de compra
+              </span>
+
+                </label>
+
+
+                <div class="botones-finales">
+
+                    <a
+                            href="productos.html"
+                            class="btn-seguir"
+                    >
+                        Seguir comprando
+                    </a>
+
+                    <button
+                            type="submit"
+                            class="btn-confirmar"
+                            id="btn-confirmar-compra"
+                    >
+                        Confirmar compra
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </form>
+
+</main>
+
+
+<!-- PIE DE PÁGINA -->
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-col">
+            <h3>TechnoZone</h3>
+
+            <p>
+                Tu zona de confianza en productos de calidad.
+            </p>
+        </div>
+
+
+        <div class="footer-col">
+            <h4>Enlaces</h4>
+
+            <ul>
+                <li>
+                    <a href="sobre-nosotros.html">
+                        Sobre nosotros
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Contacto
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Preguntas frecuentes
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="footer-col">
+            <h4>Síguenos</h4>
+
+            <ul>
+                <li>
+                    <a href="">
+                        Facebook
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Instagram
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <p class="copyright">
+        &copy; 2026 TechnoZone. Todos los derechos reservados.
+    </p>
+
+</footer>
+
+
+<script src="../scripts/data.js"></script>
+<script src="../scripts/carrito.js"></script>
+<script src="../scripts/pago.js"></script>
+
+</body>
+</html>
