@@ -237,3 +237,44 @@ footer {
   font-size: 13px;
   color: #c6cbec;
 }
+
+/* ==========================================================
+   RESPONSIVE - celulares y pantallas chicas (hasta 480px)
+   ========================================================== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  .frase p {
+    font-size: 16px;
+  }
+
+  .input-contenedor input {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .navegacion ul {
+    gap: 10px 16px;
+  }
+
+  .navegacion ul li a {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .product-card {
+    flex: 1 1 140px;
+  }
+
+  .footer-col {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .footer-col p {
+    max-width: none;
+  }
+}
+

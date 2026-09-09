@@ -197,3 +197,12 @@
 .carrito-checkout:hover {
   background-color: #14206c;
 }
+
+/* En celulares chicos, el panel del carrito ocupa toda la pantalla
+   en vez de quedar angosto a la derecha */
+@media (max-width: 480px) {
+  .carrito-panel {
+    width: 100%;
+  }
+}
+

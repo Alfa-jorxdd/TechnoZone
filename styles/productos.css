@@ -59,3 +59,15 @@
   color: #000000;
   padding: 30px 0;
 }
+
+/* Celulares: los inputs de precio (min/max) se achican para que
+   quepan uno al lado del otro sin desbordar la pantalla */
+@media (max-width: 480px) {
+  .filtro-precio input {
+    width: 80px;
+  }
+
+  .filtros-contenedor {
+    padding: 12px;
+  }
+}
